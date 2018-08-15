@@ -30,5 +30,6 @@
     <modules>
         <module>prototype-pattern</module>
         <module>builder-pattern</module>
+        <module>structural-pattern</module>
     </modules>
 </project>
