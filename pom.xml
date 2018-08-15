@@ -29,5 +29,6 @@
 
     <modules>
         <module>prototype-pattern</module>
+        <module>builder-pattern</module>
     </modules>
 </project>

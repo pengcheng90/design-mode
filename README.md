@@ -3,3 +3,4 @@
 六个创建型模式
 
 * [原型模式](prototype-pattern/README.md)
+* [建造者模式](builder-pattern/README.md)
