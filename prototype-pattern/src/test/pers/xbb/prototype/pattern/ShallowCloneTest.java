@@ -19,7 +19,7 @@ public class ShallowCloneTest {
 
         ShallowClone clone = null;
         try {
-            clone = (ShallowClone) shallowClone.clone();
+            clone = shallowClone.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }

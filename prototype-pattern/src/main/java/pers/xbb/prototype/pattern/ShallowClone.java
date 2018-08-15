@@ -2,6 +2,7 @@ package pers.xbb.prototype.pattern;
 
 /**
  * 浅克隆:实现Cloneable接口
+ * Cloneable为空接口（无抽象方法），起到标识的作用，表示实现该接口的类可以clone
  */
 public class ShallowClone implements Cloneable {
 
@@ -19,8 +20,8 @@ public class ShallowClone implements Cloneable {
      * @throws CloneNotSupportedException
      */
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected ShallowClone clone() throws CloneNotSupportedException {
+        return (ShallowClone) super.clone();
     }
 
     public String getName() {
