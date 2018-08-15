@@ -3,34 +3,32 @@ package pers.xbb.prototype.pattern;
 
 import org.junit.Test;
 
-public class ShallowCloneTest {
+public class DeepCloneTest {
 
     @Test
-    public void ShallowClone() {
-        pers.xbb.prototype.pattern.ShallowClone shallowClone = new pers.xbb.prototype.pattern.ShallowClone();
-        shallowClone.setName("jack");
-        shallowClone.setAge(18);
-        Role role = new Role();
-        role.setRoleId(1);
-        role.setRoleName("管理员");
-        System.out.println("原型对象:" + shallowClone.toString());
+    public void DeepCloneTest() {
+        DeepClone deepClone = new DeepClone();
+        deepClone.setName("tom");
+        Department department = new Department("开发部");
+        deepClone.setDepartment(department);
+        System.out.println("原型对象:" + deepClone.toString());
 
 
-        ShallowClone clone = null;
+        DeepClone clone = null;
         try {
-            clone = (ShallowClone) shallowClone.clone();
+            clone = (DeepClone) deepClone.deepClone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         System.out.println("克隆对象:" + clone.toString());
 
         /**
-         * 结果：对象不相等：克隆了新的对象
-         * 但是引用类型成员变量相等。
-         * 所以是浅克隆
+         * 结果：对象不相等：克隆了新的对象,引用类型成员变量也不相等
+         * 深克隆，需要克隆的对象必须实现Serializable接口
+         *
          */
-        System.out.println("克隆对象是否和原型对象相等：" + (shallowClone == clone));
-        System.out.println("引用类型成员变量是否相等：" + (shallowClone.getRole() == clone.getRole()));
+        System.out.println("克隆对象是否和原型对象相等：" + (deepClone == clone));
+        System.out.println("引用类型成员变量是否相等：" + (deepClone.getDepartment() == clone.getDepartment()));
 
     }
 }
