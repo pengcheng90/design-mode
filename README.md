@@ -5,7 +5,7 @@
 * [原型模式](prototype-pattern/README.md)
 * [建造者模式](builder-pattern/README.md)
 
-七个结构型模式
+[七个结构型模式](structural-pattern/README.md)
 
 
 
