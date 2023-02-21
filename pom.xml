@@ -31,5 +31,6 @@
         <module>prototype-pattern</module>
         <module>builder-pattern</module>
         <module>structural-pattern</module>
+        <module>behavior-pattern</module>
     </modules>
 </project>
